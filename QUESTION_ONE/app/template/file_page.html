@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap3 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                
+                <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
+                
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        {% block body_block %}
+
+        <h3>Sample contact identification from upladed file</h3><br>
+
+            <table border="1" width="30%">
+                <tr>
+                    <th> Country Code </th>
+                    <th> National Number </th>
+                    <th> Network Prefix </th>
+                <tr>
+                <tr>
+                    <td>{{ country_code }}</td>
+                    <td>{{ national_number }}</td>
+                    <td>{{ network_prefix }}</td>
+                </tr>
+            </table>
+
+        
+
+        {% endblock %}
+    </div>
+
+</body>
+</html>
